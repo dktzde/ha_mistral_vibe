@@ -1,0 +1,52 @@
+configuration:
+  api_key:
+    name: Mistral API Key
+    description: >-
+      Your Mistral AI API key. Get one at https://console.mistral.ai.
+      Required to use Mistral Vibe.
+  model:
+    name: Model
+    description: >-
+      The Mistral model to use. 'default' uses Vibe's built-in default
+      (devstral-2). Choose 'devstral-small' for a lighter model,
+      'mistral-large' for complex reasoning, or 'codestral' for code-focused tasks.
+  auto_approve:
+    name: Auto-approve Mode
+    description: >-
+      Automatically approve all tool executions without prompting.
+      Use with caution - this gives Mistral Vibe full control over
+      file modifications and command execution.
+  enable_mcp:
+    name: Enable Home Assistant MCP
+    description: >-
+      Enable the Home Assistant MCP server for direct entity and service
+      interaction. Allows Mistral Vibe to query states, call services,
+      and interact with your smart home.
+  terminal_font_size:
+    name: Terminal Font Size
+    description: >-
+      Font size for the web terminal in pixels (10-24).
+      Adjust for readability on your display.
+  terminal_theme:
+    name: Terminal Theme
+    description: >-
+      Color theme for the web terminal.
+      Choose 'dark' for dark backgrounds or 'light' for light backgrounds.
+  working_directory:
+    name: Working Directory
+    description: >-
+      The default working directory when Mistral Vibe starts.
+      Use /homeassistant for direct access to HA configuration files.
+  session_persistence:
+    name: Session Persistence
+    description: >-
+      Enable tmux session persistence. When enabled, your terminal session
+      survives browser refreshes and disconnects. Recommended for long-running tasks.
+  auto_update_vibe:
+    name: Auto-update Mistral Vibe
+    description: >-
+      Automatically check for and install Mistral Vibe updates on add-on startup.
+      Keeps Mistral Vibe current without requiring add-on version bumps.
+
+network:
+  7681/tcp: Web Terminal (ttyd)

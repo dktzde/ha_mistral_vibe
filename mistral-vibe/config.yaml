@@ -1,0 +1,49 @@
+name: Mistral Vibe
+description: Run Mistral Vibe AI coding assistant inside Home Assistant to create automations, debug issues, and manage your smart home configuration
+version: "0.1.0"
+slug: mistral_vibe
+url: https://github.com/dktzde/ha_mistral_vibe
+arch:
+  - amd64
+  - aarch64
+startup: application
+boot: auto
+init: true
+ingress: true
+ingress_port: 7681
+ingress_stream: true
+panel_icon: mdi:robot-outline
+panel_title: Mistral Vibe
+homeassistant_api: true
+auth_api: true
+hassio_api: true
+hassio_role: manager
+map:
+  - homeassistant_config:rw
+  - ssl:ro
+  - share:rw
+  - media:rw
+  - addon_config:rw
+  - backup:ro
+options:
+  api_key: ""
+  model: default
+  auto_approve: false
+  enable_mcp: true
+  terminal_font_size: 14
+  terminal_theme: dark
+  working_directory: /homeassistant
+  session_persistence: true
+  auto_update_vibe: true
+schema:
+  api_key: password
+  model: list(default|devstral-small|mistral-large|codestral)
+  auto_approve: bool
+  enable_mcp: bool
+  terminal_font_size: int(10,24)
+  terminal_theme: list(dark|light)
+  working_directory: str
+  session_persistence: bool
+  auto_update_vibe: bool
+environment:
+  TERM: xterm-256color

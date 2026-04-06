@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+- Fixed "Permission denied" error by changing `init: true` to `init: false` in config.yaml
+
 ## [0.1.0] - 2026-03-28
 
 ### Added
